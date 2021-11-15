@@ -33,7 +33,8 @@ export class ProduitComponent implements OnInit {
     let valeur = this.produitFormGroup.value.valeur
     let nouveauProduit  = new ProduitModel(title, description, key, valeur);
     this.produitService.ajouterProduit(nouveauProduit).subscribe((resultat)=>{
-      this.router.navigate(['liste']);
+      alert("Produit ajouter avec success")
+      this.router.navigate(['/produit']);
     }, (erreur)=>{
 
     })
