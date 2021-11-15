@@ -1,0 +1,27 @@
+<form action="" [formGroup]="produitFormGroup" (ngSubmit)="ajouterProduitAuServer()">
+  <div class="col-md-10 mx-auto">
+    <div>
+      <h2>Ajout de produit</h2>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="title" formControlName="title">
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="" class="form-label">Key</label>
+        <input type="text" class="form-control" id="key" placeholder="key" name="key" formControlName="title">
+      </div>
+      <div class="col-md-6">
+        <label for="" class="form-label">Valeur</label>
+        <input type="text" class="form-control" id="valeur" placeholder="title" name="valeur" formControlName="title">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">description</label>
+      <textarea class="form-control" id="description" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary">Ajouter</button>
+  </div>
+
+</form>
