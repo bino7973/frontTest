@@ -14,4 +14,9 @@ export class ProduitService {
     let url : string = 'http://localhost:4000/produits';
     return this.httpClient.post(url, nouveauProduit);
   }
+
+  obtenirProduit() : Observable<any>{
+    let url : string = 'http://localhost:4000/produits';
+    return this.httpClient.get(url);
+  }
 }

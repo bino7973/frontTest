@@ -34,7 +34,8 @@ export class ProduitComponent implements OnInit {
     let nouveauProduit  = new ProduitModel(title, description, key, valeur);
     this.produitService.ajouterProduit(nouveauProduit).subscribe((resultat)=>{
       alert("Produit ajouter avec success")
-      this.router.navigate(['/produit']);
+      this.produitFormGroup.reset();
+      this.router.navigate(['/liste'])
     }, (erreur)=>{
 
     })

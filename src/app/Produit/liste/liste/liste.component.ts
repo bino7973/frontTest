@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProduitService} from "../../../service/Produit/produit.service";
 
 @Component({
   selector: 'app-liste',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeComponent implements OnInit {
 
-  constructor() { }
+  listeProduit : any;
+
+  constructor(private produitService : ProduitService) { }
 
   ngOnInit(): void {
+    this.obtenirListeProduit()
+  }
+
+  obtenirListeProduit(){
+    this.produitService.obtenirProduit().subscribe((resultat)=>{
+      this.listeProduit = resultat.produits
+      console.log(this.listeProduit)
+    }, (erreur)=>{
+      console.log(erreur)
+    })
   }
 
 }
